@@ -34,3 +34,6 @@ Content-Type: application/json
     "link" : "https://www.linkedin.com/in/marion-hourdou/",
     "logo": "https://png.pngtree.com/element_our/sm/20180626/sm_5b32227feb591.jpg"
 }
+
+###
+DELETE http://localhost:4000/contact/647184b0-bb98-4eff-9422-27a07f506777

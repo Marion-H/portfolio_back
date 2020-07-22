@@ -14,6 +14,11 @@ app.use(express.json());
 
 app.use('/contact', contact)
 
+app.get("/", (req, res) => {
+  res.setHeader("Content-Type", "text/html");
+  res.status(200).send("<h1>Welcome to my API</h1>");
+});
+
 async function main() {
   try {
     await sequelize.sync({alter:true});
