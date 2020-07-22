@@ -21,7 +21,6 @@
     DB_DATABASE=sample #database name
     DB_DIALECT=mysql #one of mysql | postgres | mssql | mariadb | sqlite
     PORT=5050 #port to listen for your server
-    secret=yoursecretforjwt #secret used for jwt encryption
 ```
 
 ## Author
