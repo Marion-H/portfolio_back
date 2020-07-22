@@ -48,4 +48,14 @@ formation.put("/:uuid", async (req, res) => {
   }
 });
 
+formation.delete("/:uuid", async (req, res) => {
+  const { uuid } = req.params;
+  try {
+    await Formation.destroy({ where: { uuid } });
+    res.status(204).end()
+  } catch (error) {
+    res.status(400).json(error)
+  }
+});
+
 module.exports = formation;
