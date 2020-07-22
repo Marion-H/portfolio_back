@@ -26,7 +26,7 @@ contact.post("/", async (req, res) => {
 });
 
 contact.get("/:uuid", async (req, res) => {
-  const{uuid}=req.params
+  const { uuid } = req.params;
   try {
     const contact = await Contact.findByPk(uuid);
     res.status(200).json(contact);
@@ -43,6 +43,16 @@ contact.put("/:uuid", async (req, res) => {
     res.status(204).end();
   } catch (error) {
     res.status(400).json(error);
+  }
+});
+
+contact.delete("/:uuid", async (req, res) => {
+  const { uuid } = req.params;
+  try {
+    await Contact.destroy({ where: { uuid } });
+    res.status(204).end()
+  } catch (error) {
+    res.status(400).json(error)
   }
 });
 
