@@ -1,0 +1,29 @@
+GET http://localhost:4000/formations
+
+###
+
+
+POST http://localhost:4000/formations
+Content-Type: application/json
+
+{
+    "school":"Wild Code School",
+    "diploma":"Titre professionnel Développeur Web et Web Mobile",
+    "year":"2020",
+    "description":"Apprends à concevoir une application web"
+}
+
+###
+GET http://localhost:4000/formations/c3fd8d35-7902-4060-9d32-e7fdf92dc4b1
+
+
+####
+PUT http://localhost:4000/formations/c3fd8d35-7902-4060-9d32-e7fdf92dc4b1
+Content-Type: application/json
+
+{
+    "school":"Wild Code School",
+    "diploma":"Titre professionnel Développeur Web et Web Mobile",
+    "year":"2020",
+    "description":"Apprends à concevoir une application web "
+}

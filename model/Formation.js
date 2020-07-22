@@ -1,25 +1,29 @@
 const Sequelize = require("sequelize");
 const sequelizeInstance = require("../sequelize");
 
-const Project = sequelizeInstance.define("Project", {
+const Formation = sequelizeInstance.define("Formation", {
   uuid: {
     type: Sequelize.UUID,
     allowNull: false,
     primaryKey: true,
     defaultValue: Sequelize.UUIDV4,
   },
-  title: {
-    type: Sequelize.STRING(255),
+  school: {
+    type: Sequelize.STRING(1000),
     allowNull: false,
   },
-  link: {
-    type: Sequelize.STRING(400),
+  diploma: {
+    type: Sequelize.STRING(1000),
     allowNull: false,
   },
-  image: {
+  year: {
     type: Sequelize.STRING(300),
-    allowNull: true,
+    allowNull: false,
+  },
+  description: {
+    type: Sequelize.STRING(2000),
+    allowNull: false,
   },
 });
 
-module.exports = Project;
+module.exports = Formation
