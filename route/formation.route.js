@@ -12,4 +12,19 @@ formation.get("/", async (req, res) => {
   }
 });
 
+formation.post("/", async (req, res) => {
+  const { school, diploma, year, description } = req.body;
+  try {
+    const formation = await Formation.create({
+      school,
+      diploma,
+      year,
+      description,
+    });
+    res.status(201).json(formation);
+  } catch (error) {
+    res.status(422).json(error);
+  }
+});
+
 module.exports = formation;

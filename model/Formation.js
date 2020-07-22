@@ -18,11 +18,11 @@ const Formation = sequelizeInstance.define("Formation", {
   },
   year: {
     type: Sequelize.STRING(300),
-    allowNull: true,
+    allowNull: false,
   },
   description: {
-    type: Sequelize.STRING(1000),
-    allowNull: true,
+    type: Sequelize.STRING(2000),
+    allowNull: false,
   },
 });
 
