@@ -1,0 +1,14 @@
+GET http://localhost:4000/projects
+
+####
+
+POST http://localhost:4000/projects
+Content-Type: application/json
+
+{
+    "title":"LookUp projet 3 Wild Code School",
+    "link":"https://btz-js-202003-p3-lookup-front.jsrover.wilders.dev/"
+}
+
+###
+GET http://localhost:4000/projects/41f382fc-8045-42d0-b764-547423a66441

@@ -15,4 +15,5 @@ module.exports = new Sequelize({
     password: DB_PASSWORD,
     database: DB_DATABASE,
     dialect: DB_DIALECT,
+    logging:false
 })
