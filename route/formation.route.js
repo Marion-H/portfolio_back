@@ -27,4 +27,14 @@ formation.post("/", async (req, res) => {
   }
 });
 
+formation.get("/:uuid", async (req, res) => {
+  const { uuid } = req.params;
+  try {
+    const formation = await Formation.findByPk(uuid);
+    res.status(200).json(formation);
+  } catch (error) {
+    res.status(400).json(error);
+  }
+});
+
 module.exports = formation;
