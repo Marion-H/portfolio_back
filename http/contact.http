@@ -1,0 +1,36 @@
+Get http://localhost:4000/contact
+
+####
+
+GET http://localhost:4000/contact/2af83b17-f83f-4daa-9a38-cd42ffc3cba4
+
+####
+POST http://localhost:4000/contact
+Content-Type: application/json
+
+{
+    "name":"Github",
+    "link":"https://github.com/Marion-H",
+    "logo":"https://img2.freepng.fr/20180331/udw/kisspng-social-media-github-computer-icons-logo-github-5ac0188083c4f5.8572681115225386245397.jpg"
+}
+
+
+####
+POST http://localhost:4000/contact
+Content-Type: application/json
+
+
+{
+    "name" : "Linkedin",
+    "link" : "https://www.linkedin.com/in/marion-hourdou/",
+    "logo": "https://png.pngtree.com/element_our/sm/20180626/sm_5b32227feb591.jpg"
+}
+###
+PUT http://localhost:4000/contact/37b94ec2-52bb-4ff7-b7c4-b41219b16c2b
+Content-Type: application/json
+
+{
+    "name" : "Linkedin",
+    "link" : "https://www.linkedin.com/in/marion-hourdou/",
+    "logo": "https://png.pngtree.com/element_our/sm/20180626/sm_5b32227feb591.jpg"
+}

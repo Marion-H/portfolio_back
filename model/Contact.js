@@ -10,15 +10,15 @@ const Contact = sequelizeInstance.define("Contact", {
       },
       name: {
         type: Sequelize.STRING(255),
-        allowNull: true,
+        allowNull: false,
       },
       link: {
         type: Sequelize.STRING(400),
-        allowNull: true,
+        allowNull: false,
       },
-      picture: {
+      logo: {
         type: Sequelize.STRING(250),
-        allowNull: true,
+        allowNull: false,
       },
 })
 
