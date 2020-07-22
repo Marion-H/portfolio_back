@@ -27,13 +27,24 @@ project.post("/", async (req, res) => {
 });
 
 project.get("/:uuid", async (req, res) => {
-    const { uuid } = req.params;
-    try {
-      const project = await Project.findByPk(uuid);
-      res.status(200).json(project);
-    } catch (error) {
-      res.status(400).json(error);
-    }
-  });
+  const { uuid } = req.params;
+  try {
+    const project = await Project.findByPk(uuid);
+    res.status(200).json(project);
+  } catch (error) {
+    res.status(400).json(error);
+  }
+});
+
+project.put("/:uuid", async (req, res) => {
+  const { uuid } = req.params;
+  const { title, link, image } = req.body;
+  try {
+    await Project.update({ title, link, image }, { where: { uuid } });
+    res.status(204).end();
+  } catch (error) {
+    res.status(400).json(error);
+  }
+});
 
 module.exports = project;
