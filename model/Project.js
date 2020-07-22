@@ -20,6 +20,15 @@ const Project = sequelizeInstance.define("Project", {
     type: Sequelize.STRING(300),
     allowNull: true,
   },
+  description: {
+    type: Sequelize.STRING(4000),
+    allowNull: false,
+  },
+  year:{
+    type: Sequelize.STRING(4000),
+    allowNull: true,
+  }
+  
 });
 
 module.exports = Project;

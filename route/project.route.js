@@ -13,12 +13,14 @@ project.get("/", async (req, res) => {
 });
 
 project.post("/", async (req, res) => {
-  const { title, link, image } = req.body;
+  const { title, link, image, description, year } = req.body;
   try {
     const project = await Project.create({
       title,
       link,
       image,
+      description,
+      year,
     });
     res.status(201).json(project);
   } catch (error) {
@@ -38,9 +40,9 @@ project.get("/:uuid", async (req, res) => {
 
 project.put("/:uuid", async (req, res) => {
   const { uuid } = req.params;
-  const { title, link, image } = req.body;
+  const { title, link, image, description, year } = req.body;
   try {
-    await Project.update({ title, link, image }, { where: { uuid } });
+    await Project.update({ title, link, image , description, year}, { where: { uuid } });
     res.status(204).end();
   } catch (error) {
     res.status(400).json(error);
@@ -48,13 +50,13 @@ project.put("/:uuid", async (req, res) => {
 });
 
 project.delete("/:uuid", async (req, res) => {
-    const { uuid } = req.params;
-    try {
-      await Project.destroy({ where: { uuid } });
-      res.status(204).end()
-    } catch (error) {
-      res.status(400).json(error)
-    }
-  });
+  const { uuid } = req.params;
+  try {
+    await Project.destroy({ where: { uuid } });
+    res.status(204).end();
+  } catch (error) {
+    res.status(400).json(error);
+  }
+});
 
 module.exports = project;
