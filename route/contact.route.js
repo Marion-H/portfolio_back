@@ -7,7 +7,7 @@ contact.get("/", async (req, res) => {
     const contacts = await Contact.findAll();
     res.status(200).json(contacts);
   } catch (error) {
-    res.status(400).json(err);
+    res.status(400).json(error);
   }
 });
 
@@ -22,6 +22,16 @@ contact.post("/", async (req, res) => {
     res.status(201).json(contact);
   } catch (error) {
     res.status(422).json(error);
+  }
+});
+
+contact.get("/:uuid", async (req, res) => {
+  const{uuid}=req.params
+  try {
+    const contact = await Contact.findByPk(uuid);
+    res.status(200).json(contact);
+  } catch (error) {
+    res.status(400).json(error);
   }
 });
 
