@@ -18,7 +18,7 @@ const Project = sequelizeInstance.define("Project", {
       },
       image: {
         type: Sequelize.STRING(300),
-        allowNull: false,
+        allowNull: true,
       },
 })
 
