@@ -37,4 +37,15 @@ formation.get("/:uuid", async (req, res) => {
   }
 });
 
+formation.put("/:uuid", async (req, res) => {
+  const { uuid } = req.params;
+  const { school, diploma, year, description } = req.body;
+  try {
+    await Formation.update({ school, diploma, year, description }, { where: { uuid } });
+    res.status(204).end();
+  } catch (error) {
+    res.status(400).json(error);
+  }
+});
+
 module.exports = formation;
