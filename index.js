@@ -16,7 +16,7 @@ app.use('/contact', contact)
 
 async function main() {
   try {
-    await sequelize.sync();
+    await sequelize.sync({alter:true});
     await sequelize.authenticate();
     app.listen(PORT, (err) => {
       if (err) throw new Error(err.message);

@@ -17,11 +17,23 @@ contact.post("/", async (req, res) => {
     const contact = await Contact.create({
       name,
       link,
-      logo
+      logo,
     });
-    res.status(201).json(contact)
+    res.status(201).json(contact);
   } catch (error) {
-      res.status(422).json(err)
+    res.status(422).json(error);
   }
 });
+
+contact.put("/:uuid", async (req, res) => {
+  const { uuid } = req.params;
+  const { name, link, logo } = req.body;
+  try {
+    await Contact.update({ name, link, logo }, { where: { uuid } });
+    res.status(204).end();
+  } catch (error) {
+    res.status(400).json(error);
+  }
+});
+
 module.exports = contact;
