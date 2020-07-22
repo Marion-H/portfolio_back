@@ -47,4 +47,14 @@ project.put("/:uuid", async (req, res) => {
   }
 });
 
+project.delete("/:uuid", async (req, res) => {
+    const { uuid } = req.params;
+    try {
+      await Project.destroy({ where: { uuid } });
+      res.status(204).end()
+    } catch (error) {
+      res.status(400).json(error)
+    }
+  });
+
 module.exports = project;
