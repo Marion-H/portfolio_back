@@ -22,7 +22,7 @@ const Project = sequelizeInstance.define("Project", {
   },
   description: {
     type: Sequelize.STRING(4000),
-    allowNull: false,
+    allowNull: true,
   },
   year:{
     type: Sequelize.STRING(4000),
